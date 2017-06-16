@@ -31,7 +31,7 @@ Once we obtain the projections, the next step is to develop the algorithm for 3D
 ### Simulated annealing
 Based on wikipedia, simulated annealing is a probabilistic technique for approximating the global optimum of a given function. The name and inspiration come from annealing in metallurgy, a technique involving heating and controlled cooling of a material to increase the size of its crystals and reduce their defects. The notion of cooling implemented in the simulated annealing algorithm is interpreted as a slow decrease in the probability of accepting worse solutions as the solution space is explored (accepting worse solutions is a fundamental property of metaheuristics because it allows for a more extensive search for the optimal solution).
 
-<img height="250px" align="right" src="/images/energy-landscape.png?raw=true">
+<img height="300px" align="right" src="/images/energy-landscape.png?raw=true">
 
 ### Reconstruction result
 Implementing x-ray tomographic projections and simulated annealing algorithm into C++ code, we were able to reconstruct microstructures in both 2D and 3D. Several heterogeneous structures and composite materials were tested in both parallel beam and conebeam geometry.
