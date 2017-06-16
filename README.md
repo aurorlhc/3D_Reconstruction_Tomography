@@ -1,5 +1,5 @@
 # Stochastic Reconstruction using X-Ray Tomography Projections
-> In this repo, I will present the stochastic optimization algorithms for reconstructing heterogeneous materials using X-ray tomographic projections
+> In this repo, I will present the stochastic optimization algorithms for reconstructing heterogeneous materials using X-ray tomographic projections. As the described in detail below, with stochastic reconstruction, one can accurately reconstructe 3D binary representation of microstructures using limited (around 20 to 40) x-ray tomography projections, which is a significant decrease compared to the traditional reconstruction algorithm like Filtered-backprojection algorithm (FBP), which requires several thousands of projections. Our reconstruction algorithm would save huge space and time collecting and saving x-ray projection data, which will significantly improve the efficiency and application of this technique into 4D material science.
 
 ## Table of Content
 - X-ray tomography
@@ -9,6 +9,7 @@
 - 3D reconstruction
     - Stochastic optimization
     - Simulated annealing
+    - Reconstruction result
     - Multi-modal reconstruction
     
 ## X-ray tomography
@@ -26,4 +27,24 @@ Different from the parallel-beam projection geometry, the cone-beam geometry has
 <img height="350px" align="right" src="/images/cone-geometry.png?raw=true">
 
 ## Stochastic reconstruction
-Once we obtain the projections, the next step is to develop the algorithm for 3D reconstruction. In the current project, the reconstruction algorithm is followed the simulated annealing procedure, which considers the reconstruction problem as an inverse optimization problem and allows one to generate virtual microstructures compatible with prescribed structural information and statistics. In particular, we formulate the reconstruction problem as an “energy” minimization problem, where the energy functional 'E' is defined as the square difference between the target data set 'D' and the corresponding data set 'D''
+Once we obtain the projections, the next step is to develop the algorithm for 3D reconstruction. In the current project, the reconstruction algorithm is followed the simulated annealing procedure, which considers the reconstruction problem as an inverse optimization problem and allows one to generate virtual microstructures compatible with prescribed structural information and statistics. In particular, we formulate the reconstruction problem as an “energy” minimization problem, where the energy functional 'E' is defined as the square difference of x-ray projections between the target data set 'D' and the corresponding data set 'D*'. 'D' and 'D*' can be considered as target microstructure and the trial microstructure during reconstruction procedure. The assumption is that, with enough projections, we can accurately evolve the trial microstructure to the target microstructure as we reduce the energy to a tolerance level.
+
+### Simulated annealing
+Based on wikipedia, simulated annealing is a probabilistic technique for approximating the global optimum of a given function. The name and inspiration come from annealing in metallurgy, a technique involving heating and controlled cooling of a material to increase the size of its crystals and reduce their defects. The notion of cooling implemented in the simulated annealing algorithm is interpreted as a slow decrease in the probability of accepting worse solutions as the solution space is explored (accepting worse solutions is a fundamental property of metaheuristics because it allows for a more extensive search for the optimal solution).
+
+<img height="350px" align="right" src="/images/energy-landscape.png?raw=true">
+
+### Reconstruction result
+Implementing x-ray tomographic projections and simulated annealing algorithm into C++ code, we were able to reconstruct microstructures in both 2D and 3D. Several heterogeneous structures and composite materials were tested in both parallel beam and conebeam geometry.
+
+Reconstruction of sandstone using both parallel beam and cone beam geometry
+<img height="350px" src="/images/sandstone-parallel.png?raw=true">
+<img height="350px" src="/images/sandstone-cone.png?raw=true">
+Reconstruction of Sn-spheres/Clay composite material
+<img height="350px" src="/images/sn-clay.png?raw=true">
+
+### Multi-modal reconstruction
+In order to further reduce the projection data, one can adding complementary data as the reconstruction input data, together with the projection data. As the result shows that two-point correlation function (these will be talked in detail in the future repository) is the perfect candidate to do the job. 
+<img height="350px" align="right" src="/images/multi-modal.png?raw=true">
+
+
