@@ -44,4 +44,4 @@ Reconstruction of Sn-spheres/Clay composite material
 
 ### Multi-modal reconstruction
 In order to further reduce the projection data, one can adding complementary data as the reconstruction input data, together with the projection data. As the result shows that two-point correlation function (these will be talked in detail in the future repository) is the perfect candidate to do the job. 
-<img height="300px" src="/images/multi-modal.png?raw=true">
+<img height="400px" src="/images/multi-modal.png?raw=true">
