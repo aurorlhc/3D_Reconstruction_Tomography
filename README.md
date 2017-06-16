@@ -37,11 +37,11 @@ Based on wikipedia, simulated annealing is a probabilistic technique for approxi
 Implementing x-ray tomographic projections and simulated annealing algorithm into C++ code, we were able to reconstruct microstructures in both 2D and 3D. Several heterogeneous structures and composite materials were tested in both parallel beam and conebeam geometry.
 
 Reconstruction of sandstone using both parallel beam and cone beam geometry
-<img height="200px" src="/images/sandstone-parallel.png?raw=true">
-<img height="200px" src="/images/sandstone-cone.png?raw=true">
+<img width="50px" src="/images/sandstone-parallel.png?raw=true">
+<img width="50px" src="/images/sandstone-cone.png?raw=true">
 Reconstruction of Sn-spheres/Clay composite material
-<img height="200px" src="/images/sn-clay.png?raw=true">
+<img height="250px" src="/images/sn-clay.png?raw=true">
 
 ### Multi-modal reconstruction
 In order to further reduce the projection data, one can adding complementary data as the reconstruction input data, together with the projection data. As the result shows that two-point correlation function (these will be talked in detail in the future repository) is the perfect candidate to do the job. 
-<img height="300px" align="center" src="/images/multi-modal.png?raw=true">
+<img height="300px" align="right" src="/images/multi-modal.png?raw=true">
